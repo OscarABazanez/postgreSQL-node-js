@@ -1,5 +1,5 @@
-
-
+# EndPoints
+Estan exportados en un JSON con PostMan y se pueden encontrar con el nombre **EndPoint_Postman_collection**.
 # Migración
 [Documentacion de Migracion en Sequelize](https://sequelize.org/master/manual/migrations.html)
 
