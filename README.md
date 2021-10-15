@@ -38,3 +38,9 @@ npm run migrations:run
 ```
 Ya se debieron haber generado todas las tablas que habíamos establecidos, pero se agregó una nueva tabla externa llamada **SequelizeMeta** dicha tabla almacena el histórico de las migraciones realizadas.
 
+# Importando a Heroku
+
+## Crear una base de datos de Heroku.
+```
+heroku addons:create heroku-postgresql:hobby-dev
+```
