@@ -1,5 +1,6 @@
 'use strict';
-const { USER_TABLE, UserSchema } = require('./../models/user.model')
+const { USER_TABLE } = require('./../models/user.model')
+const { DataTypes } = require('sequelize')
 
 module.exports = {
   up: async (queryInterface) => {
@@ -9,7 +10,11 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.addColumn(USER_TABLE, 'role', UserSchema.role);
+    await queryInterface.addColumn(USER_TABLE, 'role', {
+      allowNull: false,
+      type: DataTypes.STRING,
+      defaultValue: 'customer'
+    });
   },
 
   down: async (queryInterface) => {
@@ -19,6 +24,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-     await queryInterface.removeColumn(USER_TABLE, 'role');
+    await queryInterface.removeColumn(USER_TABLE, 'role');
   }
 };
