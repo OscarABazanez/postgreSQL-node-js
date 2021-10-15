@@ -44,3 +44,11 @@ Ya se debieron haber generado todas las tablas que habíamos establecidos, pero 
 ```
 heroku addons:create heroku-postgresql:hobby-dev
 ```
+Tenemos que crear una nueva rama llamda "production" donde vamos hacer un push a heroku.
+```
+git push heroku production:main
+```
+Despues tenemos que correr las migraciones de nuestra base de datos, para tener ya creadas todas nuestas tablas.
+```
+heroku run npm run migrations:run
+```
